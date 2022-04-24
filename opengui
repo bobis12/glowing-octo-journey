@@ -261,7 +261,7 @@ TextLabel_5.TextSize = 14.000
 
 -- Scripts:
 
-local function KTKD_fake_script() -- TextBox.LocalScript 
+local function INBNP_fake_script() -- TextBox.LocalScript 
 	local script = Instance.new('LocalScript', TextBox)
 
 	script.Parent.FocusLost:Connect(function()
@@ -287,12 +287,12 @@ local function KTKD_fake_script() -- TextBox.LocalScript
 	end)
 	script.Parent.FocusLost:Connect(function()
 		if script.Parent.Text==";loadgui" then
-			loadstring(game:HttpGet('https://raw.githubusercontent.com/bobis12/glowing-octo-journey/main/opengui'))
+			loadstring(game:HttpGet('https://raw.githubusercontent.com/bobis12/glowing-octo-journey/main/intergui'))
 		end
 	end)
 end
-coroutine.wrap(KTKD_fake_script)()
-local function EAORN_fake_script() -- cmdbar.LocalScript 
+coroutine.wrap(INBNP_fake_script)()
+local function KQQEEWW_fake_script() -- cmdbar.LocalScript 
 	local script = Instance.new('LocalScript', cmdbar)
 
 	local Main = script.Parent
@@ -316,8 +316,8 @@ local function EAORN_fake_script() -- cmdbar.LocalScript
 		end
 	end)
 end
-coroutine.wrap(EAORN_fake_script)()
-local function ZZDG_fake_script() -- TextButton.LocalScript 
+coroutine.wrap(KQQEEWW_fake_script)()
+local function DHTZ_fake_script() -- TextButton.LocalScript 
 	local script = Instance.new('LocalScript', TextButton)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -330,8 +330,8 @@ local function ZZDG_fake_script() -- TextButton.LocalScript
 		script.Parent.Parent.Frame.Visible=false
 	end)
 end
-coroutine.wrap(ZZDG_fake_script)()
-local function ZBYJS_fake_script() -- Frame.LocalScript 
+coroutine.wrap(DHTZ_fake_script)()
+local function UJVL_fake_script() -- Frame.LocalScript 
 	local script = Instance.new('LocalScript', Frame)
 
 	frame = script.Parent
@@ -339,8 +339,8 @@ local function ZBYJS_fake_script() -- Frame.LocalScript
 	frame.Active = true
 	frame.Selectable = true
 end
-coroutine.wrap(ZBYJS_fake_script)()
-local function LPJA_fake_script() -- cmds.LocalScript 
+coroutine.wrap(UJVL_fake_script)()
+local function QYBQJK_fake_script() -- cmds.LocalScript 
 	local script = Instance.new('LocalScript', cmds)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -363,8 +363,8 @@ local function LPJA_fake_script() -- cmds.LocalScript
 		end)
 	end)
 end
-coroutine.wrap(LPJA_fake_script)()
-local function HWUWWD_fake_script() -- loadgui.LocalScript 
+coroutine.wrap(QYBQJK_fake_script)()
+local function YFZR_fake_script() -- loadgui.LocalScript 
 	local script = Instance.new('LocalScript', loadgui)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -387,8 +387,8 @@ local function HWUWWD_fake_script() -- loadgui.LocalScript
 		end)
 	end)
 end
-coroutine.wrap(HWUWWD_fake_script)()
-local function YORRM_fake_script() -- skydive.LocalScript 
+coroutine.wrap(YFZR_fake_script)()
+local function FRBURM_fake_script() -- skydive.LocalScript 
 	local script = Instance.new('LocalScript', skydive)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -411,8 +411,8 @@ local function YORRM_fake_script() -- skydive.LocalScript
 		end)
 	end)
 end
-coroutine.wrap(YORRM_fake_script)()
-local function APMHXIU_fake_script() -- reset.LocalScript 
+coroutine.wrap(FRBURM_fake_script)()
+local function RDYXA_fake_script() -- reset.LocalScript 
 	local script = Instance.new('LocalScript', reset)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -435,8 +435,8 @@ local function APMHXIU_fake_script() -- reset.LocalScript
 		end)
 	end)
 end
-coroutine.wrap(APMHXIU_fake_script)()
-local function WWEK_fake_script() -- ScreenGui.LocalScript 
+coroutine.wrap(RDYXA_fake_script)()
+local function HUTV_fake_script() -- ScreenGui.LocalScript 
 	local script = Instance.new('LocalScript', ScreenGui)
 
 	local Players = game:GetService("Players")
@@ -451,8 +451,8 @@ local function WWEK_fake_script() -- ScreenGui.LocalScript
 		end
 	end)
 end
-coroutine.wrap(WWEK_fake_script)()
-local function WHYY_fake_script() -- ScreenGui.LocalScript 
+coroutine.wrap(HUTV_fake_script)()
+local function LWRM_fake_script() -- ScreenGui.LocalScript 
 	local script = Instance.new('LocalScript', ScreenGui)
 
 	Players = game:GetService("Players")
@@ -467,4 +467,4 @@ local function WHYY_fake_script() -- ScreenGui.LocalScript
 		end
 	end
 end
-coroutine.wrap(WHYY_fake_script)()
+coroutine.wrap(LWRM_fake_script)()
