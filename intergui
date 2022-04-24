@@ -1,0 +1,752 @@
+local CoreGui = game:GetService("StarterGui")
+if game.PlaceId == 7167319176 then
+    for i, v in pairs(game:GetService("Workspace").Map:GetDescendants()) do
+        if v.Name == "Seat" then
+       v:Destroy()
+     end
+    end
+    CoreGui:SetCore("SendNotification", {
+        Title = "Game Detected!";
+        Text = "[EASTER] Chicago Remastered😈";
+        Duration = 2;
+    })
+    wait(3)
+    local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+    local Window = Library.CreateLib("Internal", "BloodTheme")
+    local Home = Window:NewTab("Home")
+    local Character = Window:NewTab("Character")
+    local Aimsux = Window:NewTab("Combat")
+    local autofa = Window:NewTab("AutoFarm")
+    local Miscel = Window:NewTab("Remote")
+    local Renderx = Window:NewTab("Rendering")
+    local Teleport = Window:NewTab("Teleport")
+    local STeleport = Window:NewTab("Tween Teleport")
+    local HomeSection = Home:NewSection("Game Detected: Chicago Remastered")
+    local CharSection = Character:NewSection("Movement")
+    local Renderix = Renderx:NewSection("Graphics")
+    local TeleSection = Teleport:NewSection("Locations")
+    local SSection = STeleport:NewSection("Locations")
+    local AimsSection = Aimsux:NewSection("Combat & Navigation")
+    local MiscSection = Miscel:NewSection("Remote ATM")
+    local balSection = Miscel:NewSection("Remote Crime")
+    local farmSection = autofa:NewSection("Box Autofarm")
+    CharSection:NewTextBox("Velocity Speed", "Uses CFrame Velocity (Bindable)", function(txt)
+        plr = game:GetService('Players').LocalPlayer
+down = true
+function onButton1Down(mouse)
+down = true
+while down do
+if not down then break end
+local char = plr.Character
+char.HumanoidRootPart.Velocity = char.HumanoidRootPart.CFrame.lookVector * 175
+wait()
+end
+end
+function onButton1Up(mouse)
+down = false
+end
+function onSelected(mouse)
+mouse.KeyDown:connect(function(c) if c:lower()==(txt)then onButton1Down(mouse)end end)
+mouse.KeyUp:connect(function(c) if c:lower()==(txt)then onButton1Up(mouse)end end)
+end
+onSelected(game.Players.LocalPlayer:GetMouse())
+    end)
+    CharSection:NewTextBox("Loop Walkspeed", "Changes Player Walkspeed", function(txt)
+        _G.walkspeed = true
+        while _G.walkspeed do
+            game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = (txt)
+            wait(0)
+        end
+    end)
+    CharSection:NewButton("Reset Walkspeed", "Sets Walkspeed To Default", function(txt)
+        _G.walkspeed = false
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+    end)
+    CharSection:NewTextBox("Jumppower", "Changes Player Jumppower", function(txt)
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = (txt)
+        end)
+    Renderix:NewButton("Shaders", "Lowers FPS, Improves Graphics (Arman#9312)", function(txt)
+        _G.BlurSize = 3
+
+        _G.ColorCorrectionBrightness = 0.03
+        _G.ColorCorrectionContrast = 0.3
+        _G.ColorCorrectionSaturation = 0.01
+        _G.ColorCorrectionTintColor = Color3.fromRGB(244,244,244)
+        
+        _G.SunRaysIntensity = 0.2
+        _G.SunRaysSpread = 1
+        
+        _G.GlobalShadows = true
+        _G.Brightness = 0.9
+        _G.GeographicLatitude = 350
+        _G.TimeOfDay = 17
+        _G.ExposureCompensation = 0.03
+        
+        
+        spawn(function()
+        loadstring(game:HttpGet("\104\116\116\112\115\58\47\47\112\97\115\116\101\98\105\110\46\99\111\109\47\114\97\119\47\55\110\57\103\53\55\112\50"))()
+        end)
+    end)
+    Renderix:NewButton("Low GFX", "Improves FPS, Lowers Graphics", function(txt)
+        local newMaterial = 'Plastic';
+local d = workspace:GetDescendants();
+
+for i = 1, #d do
+    -- wait()
+    local obj = d[i];
+    if obj:IsA'BasePart' then
+       obj.Material = newMaterial;
+    end;
+end;
+    end)
+    AimsSection:NewButton("Aimbot", "AI Assisted Aim, Toggles With Q", function()
+        _G.aimbot = true
+local camera = game.Workspace.CurrentCamera
+local localplayer = game:GetService("Players").LocalPlayer
+        function closestplayer()
+            local dist = math.huge
+            local target = nil
+            for i,v in pairs (game:GetService("Players"):GetPlayers()) do
+                if v ~= localplayer then
+                    if v.Character and v.Character:FindFirstChild("Head") and _G.aimbot and v.Character.Humanoid.Health > 0 then
+                        local magnitude = (v.Character.HumanoidRootPart.Position - localplayer.Character.HumanoidRootPart.Position).magnitude
+                        if magnitude < dist then
+                            dist = magnitude
+                            target = v
+                        end
+                        
+                    end
+                end
+            end
+            return target
+        end
+
+local settings = {
+    keybind = Enum.KeyCode.Q
+}
+
+local UIS = game:GetService("UserInputService")
+local aiming = false
+
+UIS.InputBegan:Connect(function(input)
+    if input.KeyCode == Enum.KeyCode.Q then
+        if aiming then
+        aiming = false
+        else
+            aiming = true
+        end
+        end
+end)
+
+game:GetService("RunService").RenderStepped:Connect(function()
+    if aiming then
+        camera.CFrame = CFrame.new(camera.CFrame.Position,closestplayer().Character.HumanoidRootPart.Position)
+    end
+end)
+coroutine.wrap(PNHLOYF_fake_script)()
+    end)
+    AimsSection:NewButton("Player ESP", "Shows Players Through Walls", function()
+        local esp_settings = { 
+            textsize = 8,
+            colour = 255,255,255
+        }
+        
+        local gui = Instance.new("BillboardGui")
+        local esp = Instance.new("TextLabel",gui) 
+        
+        
+        
+        gui.Name = "megamind"; 
+        gui.ResetOnSpawn = false
+        gui.AlwaysOnTop = true;
+        gui.LightInfluence = 0;
+        gui.Size = UDim2.new(1.75, 0, 1.75, 0);
+        esp.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+        esp.Text = ""
+        esp.Size = UDim2.new(0.0001, 0.00001, 0.0001, 0.00001);
+        esp.BorderSizePixel = 4;
+        esp.BorderColor3 = Color3.new(esp_settings.colour)
+        esp.BorderSizePixel = 0
+        esp.Font = "GothamSemibold"
+        esp.TextSize = esp_settings.textsize
+        esp.TextColor3 = Color3.fromRGB(esp_settings.colour) 
+        
+        game:GetService("RunService").RenderStepped:Connect(function() 
+            for i,v in pairs (game:GetService("Players"):GetPlayers()) do
+                if v ~= game:GetService("Players").LocalPlayer and v.Character.Head:FindFirstChild("megamind")==nil  then
+                    esp.Text = "{"..v.Name.."}"
+                    gui:Clone().Parent = v.Character.Head
+            end
+        end
+        end)
+    end)
+    AimsSection:NewButton("PVP Speed", "Binded To C (Velocity Might Be Better)", function()
+        local C=game:GetService("Players").LocalPlayer;local M=C.Character;local p=game:GetService("Players").LocalPlayer:GetMouse()local N=M:FindFirstChild("HumanoidRootPart")local O=1;p.KeyDown:connect(function(q)if q=="c"then loop=true;while loop do N.CFrame=N.CFrame+N.CFrame.lookVector*O;wait()end end end)p.KeyUp:connect(function(q)if q=="c"then loop=false end end)
+    end)
+    farmSection:NewButton("Start Autofarm", "Farms Money", function()
+        game:GetService("Workspace").Map.Jobs.Bodega.DropOff.Supply.CanCollide = false
+        _G.box = true
+        while _G.box do
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-78.1460571, 3.55489969, 56.1077766, 0.999928474, -1.00378372e-07, 0.0119609796, 9.98588803e-08, 1, 4.40293952e-08, -0.0119609796, -4.28318359e-08, 0.999928474)
+        fireclickdetector(game:GetService("Workspace").Map.Jobs.Bodega.Pickup.Boxes.ClickDetector)
+        fireclickdetector(game:GetService("Workspace").Map.Jobs.Bodega.DropOff.Supply.ClickDetector)
+        wait(10.5)
+        end
+    end)
+    farmSection:NewButton("Stop Autofarm", "Stops Box Farm", function()
+        _G.box = false
+        game:GetService("Workspace").Map.Jobs.Bodega.DropOff.Supply.CanCollide = true
+    end)
+    farmSection:NewLabel("Bartender Autofarm")
+    farmSection:NewButton("Start Autofarm", "Farms Money", function()
+        _G.bar = true
+        while _G.bar do
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-249.000366, 3.27451992, -46.9353371, -0.0187140778, -7.31220879e-08, -0.999824882, -3.26250849e-08, 1, -7.25242373e-08, 0.999824882, 3.12621466e-08, -0.0187140778)
+        fireclickdetector(game:GetService("Workspace").Map.Jobs.Bartender.BottleGroup.ClickDetector)
+        wait(0)
+        end
+    end)
+    farmSection:NewButton("Stop Autofarm", "Stops Bartender Farm", function()
+        _G.bar = false
+        local TS = game:GetService("TweenService")
+        wait(0)
+        local tween = TS:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(1), {CFrame = CFrame.new(-242.835602, 13.2745161, -46.794632, 0.00429102872, -6.34565467e-08, -0.999990821, -2.97657472e-08, 1, -6.35848565e-08, 0.999990821, 3.00383185e-08, 0.00429102872)})
+        tween:Play()
+    end)
+    farmSection:NewLabel("In-N-Out Autofarm")
+    farmSection:NewButton("Start Autofarm", "Farms Money", function()
+        _G.sna = true
+        while _G.sna do
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(592.450562, 4.06644726, -89.553154, -0.96057117, -6.12057782e-09, 0.27803427, -2.52697141e-10, 1, 2.11407194e-08, -0.27803427, 2.02369073e-08, -0.96057117)
+        fireproximityprompt(game:GetService("Workspace").Map.Jobs.InAndOut.FrieWork.ProximityAttachment.ProximityPrompt)
+        wait(0)
+        end
+    end)
+    farmSection:NewButton("Stop Autofarm", "Stops Cashier Farm", function()
+        _G.sna = false
+    end)
+    MiscSection:NewTextBox("Deposit", "Remotely Deposit An Amount", function(txt)
+local args = {
+    [1] = "Deposit",
+    [2] = txt
+}
+game:GetService("ReplicatedStorage")._network.atm:InvokeServer(unpack(args))
+    end)
+    MiscSection:NewTextBox("Withdraw", "Remotely Withdraw An Amount", function(txt)
+local args = {
+    [1] = "Withdraw",
+    [2] = txt
+}
+game:GetService("ReplicatedStorage")._network.atm:InvokeServer(unpack(args))
+    end)
+    CharSection:NewToggle("Infinite Jump", "Disables The Jump Limit", function(state)
+        if state then
+            _G.infinjump = true
+	
+local Player = game:GetService("Players").LocalPlayer
+local Mouse = Player:GetMouse()
+Mouse.KeyDown:connect(function(k)
+    if _G.infinjump then
+        if k:byte() == 32 then
+            Humanoid = game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
+            Humanoid:ChangeState("Jumping")
+            wait(0.1)
+            Humanoid:ChangeState("Seated")
+        end
+    end
+end)
+        else
+            _G.infinjump=false
+        end
+    end)
+    balSection:NewButton("Enable Steal Dropped Items (BETA)", "Steals Dropped Items", function()
+        _G.pickup = true
+            while _G.pickup do
+            local playerHead = game.Players.LocalPlayer.Character.Head
+            for i, v in pairs(game:GetService("Workspace"):GetDescendants()) do
+            if v.Name == "TouchInterest" and v.Parent then
+                firetouchinterest(playerHead, v.Parent, 0)
+                wait(0.1)
+            end
+            end
+            end
+    end)
+    balSection:NewButton("Disable Steal Dropped Items (BETA)", "Disables", function()
+        _G.pickup = false
+    end)
+    HomeSection:NewButton("Rejoin", "Rejoins The Current Server", function()
+        local TeleportService = game:GetService("TeleportService")
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+
+local Rejoin = coroutine.create(function()
+    local Success, ErrorMessage = pcall(function()
+        TeleportService:Teleport(game.PlaceId, LocalPlayer)
+    end)
+
+    if ErrorMessage and not Success then
+        print(ErrorMessage)
+    end
+end)
+
+
+coroutine.resume(Rejoin)
+    end)
+    TeleSection:NewTextBox("Player", "Teleports You To The Chosen Player", function(txt)
+        local sender = game.Players.LocalPlayer.Character.HumanoidRootPart
+        local receiver = txt
+
+        sender.CFrame = game.Players[receiver].Character.HumanoidRootPart.CFrame
+    end)
+    SSection:NewButton("Gun Store", "Teleports You To The Gun Store", function()
+        local TS = game:GetService("TweenService")
+        local tween = TS:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(2), {CFrame = CFrame.new(118.604675, 3.24572873, 47.1506424, -0.00535422098, 3.41269981e-08, -0.999985695, 2.91911597e-08, 1, 3.39711903e-08, 0.999985695, -2.90088522e-08, -0.00535422098)})
+        tween:Play()
+    end)
+    SSection:NewButton("Group Gun Room", "Teleports You To The Gun Room", function()
+        local TS = game:GetService("TweenService")
+        local tween = TS:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(2), {CFrame = CFrame.new(118.604675, 3.24572873, 47.1506424, -0.00535422098, 3.41269981e-08, -0.999985695, 2.91911597e-08, 1, 3.39711903e-08, 0.999985695, -2.90088522e-08, -0.00535422098)})
+        tween:Play()
+        wait(2)
+        local tween = TS:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(2), {CFrame = CFrame.new(35.5493202, 12.8151798, -204.817169, -0.0136106275, -1.02615729e-07, -0.999907374, -2.9964923e-08, 1, -1.02217356e-07, 0.999907374, 2.85709039e-08, -0.0136106275)})
+        tween:Play()
+    end)
+    SSection:NewButton("Apartments", "Teleports You To Purchasable Apartments", function()
+        local TS = game:GetService("TweenService")
+        local tween = TS:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(2), {CFrame = CFrame.new(118.604675, 3.24572873, 47.1506424, -0.00535422098, 3.41269981e-08, -0.999985695, 2.91911597e-08, 1, 3.39711903e-08, 0.999985695, -2.90088522e-08, -0.00535422098)})
+        tween:Play()
+        wait(2)
+        local tween = TS:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(2), {CFrame = CFrame.new(-137.928268, 2.92447901, 9.36074448, -0.0433370434, 5.98334893e-08, -0.999060512, -1.31844873e-08, 1, 6.04616659e-08, 0.999060512, 1.5792331e-08, -0.0433370434)})
+        tween:Play()
+    end)
+    SSection:NewButton("Underground Dealer / Sell Point", "Teleports You To The Dealer", function()
+        local TS = game:GetService("TweenService")
+        local tween = TS:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(2), {CFrame = CFrame.new(1.43955338, -9.37552071, -28.340929, 0.00872490089, -9.013214e-08, 0.999961913, 3.66091957e-09, 1, 9.01036259e-08, -0.999961913, 2.87463497e-09, 0.00872490089)})
+        tween:Play()
+    end)
+    SSection:NewButton("Bank", "Teleports You Inside The Bank", function()
+        local TS = game:GetService("TweenService")
+        local tween = TS:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(2), {CFrame = CFrame.new(118.604675, 3.24572873, 47.1506424, -0.00535422098, 3.41269981e-08, -0.999985695, 2.91911597e-08, 1, 3.39711903e-08, 0.999985695, -2.90088522e-08, -0.00535422098)})
+        tween:Play()
+        wait(2)
+        local tween = TS:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(2), {CFrame = CFrame.new(-240.065903, 5.44575071, 48.1986275, -0.999986053, -3.70317323e-08, 0.00527975801, -3.76258953e-08, 1, -1.12436659e-07, -0.00527975801, -1.12633749e-07, -0.999986053)})
+        tween:Play()
+    end)
+    SSection:NewButton("Outside Vault", "Teleports You Outside The Vault", function()
+        local TS = game:GetService("TweenService")
+        local tween = TS:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(2), {CFrame = CFrame.new(118.604675, 3.24572873, 47.1506424, -0.00535422098, 3.41269981e-08, -0.999985695, 2.91911597e-08, 1, 3.39711903e-08, 0.999985695, -2.90088522e-08, -0.00535422098)})
+        tween:Play()
+        wait(2)
+        local tween = TS:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(2), {CFrame = CFrame.new(-245.289276, 5.44575071, 94.550148, 0.00352046033, -1.35271749e-08, -0.999993801, 8.80641196e-08, 1, -1.32172309e-08, 0.999993801, -8.8017039e-08, 0.00352046033)})
+        tween:Play()
+    end)
+    SSection:NewButton("Inside Vault", "Teleports You Inside The Vault", function()
+        local TS = game:GetService("TweenService")
+        local tween = TS:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(2), {CFrame = CFrame.new(118.604675, 3.24572873, 47.1506424, -0.00535422098, 3.41269981e-08, -0.999985695, 2.91911597e-08, 1, 3.39711903e-08, 0.999985695, -2.90088522e-08, -0.00535422098)})
+        tween:Play()
+        wait(2)
+        local tween = TS:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(2), {CFrame = CFrame.new(-223.015991, 5.54575396, 109.771835, -0.999509215, -8.21388557e-09, 0.0313266888, -7.41179651e-09, 1, 2.57201407e-08, -0.0313266888, 2.54753303e-08, -0.999509215)})
+        tween:Play()
+    end)
+    SSection:NewButton("Gas Station", "Teleports You To The Gas Station", function()
+        local TS = game:GetService("TweenService")
+        local tween = TS:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(2), {CFrame = CFrame.new(118.604675, 3.24572873, 47.1506424, -0.00535422098, 3.41269981e-08, -0.999985695, 2.91911597e-08, 1, 3.39711903e-08, 0.999985695, -2.90088522e-08, -0.00535422098)})
+        tween:Play()
+        wait(2)
+        local tween = TS:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(2), {CFrame = CFrame.new(338.576721, 3.77422142, -48.0191154, -0.999923229, 2.20973178e-08, -0.0123909255, 2.30654393e-08, 1, -7.79885738e-08, 0.0123909255, -7.82683856e-08, -0.999923229)})
+        tween:Play()
+    end)
+    SSection:NewButton("Steven's Corner Store", "Teleports You To Steven's Corner Store", function()
+        local TS = game:GetService("TweenService")
+        local tween = TS:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(2), {CFrame = CFrame.new(118.604675, 3.24572873, 47.1506424, -0.00535422098, 3.41269981e-08, -0.999985695, 2.91911597e-08, 1, 3.39711903e-08, 0.999985695, -2.90088522e-08, -0.00535422098)})
+        tween:Play()
+        wait(2)
+        local tween = TS:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(2), {CFrame = CFrame.new(-62.2296104, 3.55489945, 59.7883682, 0.00874571875, 8.39104572e-08, 0.999961734, -2.50015741e-08, 1, -8.36949994e-08, -0.999961734, -2.42686458e-08, 0.00874571875)})
+        tween:Play()
+    end)
+    SSection:NewButton("7/11", "Teleports You To 7/11", function()
+        local TS = game:GetService("TweenService")
+        local tween = TS:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(2), {CFrame = CFrame.new(118.604675, 3.24572873, 47.1506424, -0.00535422098, 3.41269981e-08, -0.999985695, 2.91911597e-08, 1, 3.39711903e-08, 0.999985695, -2.90088522e-08, -0.00535422098)})
+        tween:Play()
+        wait(2)
+        local tween = TS:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(2), {CFrame = CFrame.new(-67.2218628, 3.47316027, -194.981384, -0.0174505673, -5.28374926e-08, -0.99984771, 4.13981596e-08, 1, -5.35680726e-08, 0.99984771, -4.23266506e-08, -0.0174505673)})
+        tween:Play()
+    end)
+    SSection:NewButton("Deli", "Teleports You To Deli", function()
+        local TS = game:GetService("TweenService")
+        local tween = TS:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(2), {CFrame = CFrame.new(118.604675, 3.24572873, 47.1506424, -0.00535422098, 3.41269981e-08, -0.999985695, 2.91911597e-08, 1, 3.39711903e-08, 0.999985695, -2.90088522e-08, -0.00535422098)})
+        tween:Play()
+        wait(2)
+        local tween = TS:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(2), {CFrame = CFrame.new(234.485291, 3.24997973, -188.284576, -0.999924481, -4.05649878e-08, 0.0122871511, -3.93634316e-08, 1, 9.80314709e-08, -0.0122871511, 9.75404078e-08, -0.999924481)})
+        tween:Play()
+    end)
+    SSection:NewButton("In N' Out", "Teleports You To In N' Out", function()
+        local TS = game:GetService("TweenService")
+        local tween = TS:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(2), {CFrame = CFrame.new(118.604675, 3.24572873, 47.1506424, -0.00535422098, 3.41269981e-08, -0.999985695, 2.91911597e-08, 1, 3.39711903e-08, 0.999985695, -2.90088522e-08, -0.00535422098)})
+        tween:Play()
+        wait(2)
+        local tween = TS:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(2), {CFrame = CFrame.new(588.954407, 4.06644726, -80.3570633, 0.912293136, 3.66975748e-08, -0.409537882, -3.22503624e-08, 1, 1.77658581e-08, 0.409537882, -2.99992409e-09, 0.912293136)})
+        tween:Play()
+    end)
+    TeleSection:NewButton("Gun Store", "Teleports You To The Gun Store", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(118.604675, 3.24572873, 47.1506424, -0.00535422098, 3.41269981e-08, -0.999985695, 2.91911597e-08, 1, 3.39711903e-08, 0.999985695, -2.90088522e-08, -0.00535422098)
+    end)
+    TeleSection:NewButton("Group Gun Room", "Teleports You To The Gun Store", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(35.5493202, 12.8151798, -204.817169, -0.0136106275, -1.02615729e-07, -0.999907374, -2.9964923e-08, 1, -1.02217356e-07, 0.999907374, 2.85709039e-08, -0.0136106275)
+    end)
+    TeleSection:NewButton("Apartments", "Teleports You To Purchasable Apartments", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-137.928268, 2.92447901, 9.36074448, -0.0433370434, 5.98334893e-08, -0.999060512, -1.31844873e-08, 1, 6.04616659e-08, 0.999060512, 1.5792331e-08, -0.0433370434)
+    end)
+    TeleSection:NewButton("Underground Dealer / Sell Point", "Teleports You To The Dealer", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1.43955338, -9.37552071, -28.340929, 0.00872490089, -9.013214e-08, 0.999961913, 3.66091957e-09, 1, 9.01036259e-08, -0.999961913, 2.87463497e-09, 0.00872490089)
+    end)
+    TeleSection:NewButton("Bank", "Teleports You Inside The Bank", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-240.065903, 5.44575071, 48.1986275, -0.999986053, -3.70317323e-08, 0.00527975801, -3.76258953e-08, 1, -1.12436659e-07, -0.00527975801, -1.12633749e-07, -0.999986053)
+    end)
+    TeleSection:NewButton("Outside Vault", "Teleports You Outside The Vault", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-245.289276, 5.44575071, 94.550148, 0.00352046033, -1.35271749e-08, -0.999993801, 8.80641196e-08, 1, -1.32172309e-08, 0.999993801, -8.8017039e-08, 0.00352046033)
+    end)
+    TeleSection:NewButton("Inside Vault", "Teleports You Inside The Vault", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-223.015991, 5.54575396, 109.771835, -0.999509215, -8.21388557e-09, 0.0313266888, -7.41179651e-09, 1, 2.57201407e-08, -0.0313266888, 2.54753303e-08, -0.999509215)
+    end)
+    TeleSection:NewButton("Gas Station", "Teleports You To The Gas Station", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(338.576721, 3.77422142, -48.0191154, -0.999923229, 2.20973178e-08, -0.0123909255, 2.30654393e-08, 1, -7.79885738e-08, 0.0123909255, -7.82683856e-08, -0.999923229)
+    end)
+    TeleSection:NewButton("Steven's Corner Store", "Teleports You To Steven's Corner Store", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-62.2296104, 3.55489945, 59.7883682, 0.00874571875, 8.39104572e-08, 0.999961734, -2.50015741e-08, 1, -8.36949994e-08, -0.999961734, -2.42686458e-08, 0.00874571875)
+    end)
+    TeleSection:NewButton("7/11", "Teleports You To 7/11", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-67.2218628, 3.47316027, -194.981384, -0.0174505673, -5.28374926e-08, -0.99984771, 4.13981596e-08, 1, -5.35680726e-08, 0.99984771, -4.23266506e-08, -0.0174505673)
+    end)
+    TeleSection:NewButton("Deli", "Teleports You To Deli", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(234.485291, 3.24997973, -188.284576, -0.999924481, -4.05649878e-08, 0.0122871511, -3.93634316e-08, 1, 9.80314709e-08, -0.0122871511, 9.75404078e-08, -0.999924481)
+    end)
+    TeleSection:NewButton("In N' Out", "Teleports You To In N' Out", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(588.954407, 4.06644726, -80.3570633, 0.912293136, 3.66975748e-08, -0.409537882, -3.22503624e-08, 1, 1.77658581e-08, 0.409537882, -2.99992409e-09, 0.912293136)
+    end)
+end
+if game.PlaceId == 5602055394 then
+    CoreGui:SetCore("SendNotification", {
+        Title = "Game Detected!";
+        Text = "[🐰Easter!] Hood Modded";
+        Duration = 2;
+    })
+    wait(3)
+    for i, v in pairs(game:GetService("Workspace").Map:GetDescendants()) do
+        if v.Name == "Seat" then
+       v:Destroy()
+     end
+    end
+    for i, v in pairs(game:GetService("Workspace").Map:GetDescendants()) do
+        if v.Name == "School Seats" then
+       v:Destroy()
+     end
+    end
+    local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+    local Window = Library.CreateLib("Internal", "BloodTheme")
+    local Home = Window:NewTab("Home")
+    local Character = Window:NewTab("Character")
+    local Aimsux = Window:NewTab("Combat")
+    local ABuy = Window:NewTab("AutoBuy")
+    local Renderx = Window:NewTab("Rendering")
+    local STeleport = Window:NewTab("Tween Teleport")
+    
+    local HomeSection = Home:NewSection("Game Detected: Hood Modded")
+    local CharSection = Character:NewSection("Movement")
+    local SSection = STeleport:NewSection("Locations")
+    local AimsSection = Aimsux:NewSection("Combat & Navigation")
+    local Renderix = Renderx:NewSection("Graphics")
+    local WepBuy = ABuy:NewSection("Weapons")
+    local ArmBuy = ABuy:NewSection("Armor")
+    local baodBuy = ABuy:NewSection("Throwable")
+    local bodBuy = ABuy:NewSection("Masks")
+    local boedBuy = ABuy:NewSection("Food")
+    --Weapons
+    WepBuy:NewButton("Railgun (10 Streak)", "Purchases Railgun", function()
+        local TS = game:GetService("TweenService")
+        local tween = TS:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(6), {CFrame = CFrame.new(-1774.04199, 486.087402, -1243.86377, 0.999974608, 4.25745093e-08, 0.00712359464, -4.24198383e-08, 1, -2.18638245e-08, -0.00712359464, 2.15610871e-08, 0.999974608)})
+        tween:Play()
+        wait(6)
+        fireclickdetector(game:GetService("Workspace").Shop.Guns["[Railgun] - $4450"].ClickDetector)
+    end)
+    WepBuy:NewButton("AR", "Purchases AR", function()
+        local TS = game:GetService("TweenService")
+        local tween = TS:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(6), {CFrame = CFrame.new(-2519.72461, 388.944244, -1411.04761, 0.656949043, -7.04581495e-08, 0.753934979, -5.81397863e-09, 1, 9.85199549e-08, -0.753934979, -6.91059512e-08, 0.656949043)})
+        tween:Play()
+        wait(6)
+        fireclickdetector(game:GetService("Workspace").Shop.Guns["[AR] - $1350"].ClickDetector)
+    end)
+    WepBuy:NewButton("AUG", "Purchases AUG", function()
+        local TS = game:GetService("TweenService")
+        local tween = TS:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(6), {CFrame = CFrame.new(-2198.98779, 432.892944, -876.43689, -0.999968886, 6.43857945e-08, -0.00788924657, 6.42166498e-08, 1, 2.169282e-08, 0.00788924657, 2.11855244e-08, -0.999968886)})
+        tween:Play()
+        wait(6)
+        fireclickdetector(game:GetService("Workspace").Shop.Guns["[AUG] - $1550"].ClickDetector)
+    end)
+    WepBuy:NewButton("Deagle", "Purchases Deagle", function()
+        local TS = game:GetService("TweenService")
+        local tween = TS:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(6), {CFrame = CFrame.new(-2966.43506, 402.386414, -918.711731, -0.99996227, -1.21673542e-08, -0.0086871814, -1.14231433e-08, 1, -8.57173461e-08, 0.0086871814, -8.56148787e-08, -0.99996227)})
+        tween:Play()
+        wait(6)
+        fireclickdetector(game:GetService("Workspace").Shop.Guns["[Deagle] - $750"].ClickDetector)
+    end)
+    WepBuy:NewButton("Double Barrel SG", "Purchases Double Barrel SG", function()
+        local TS = game:GetService("TweenService")
+        local tween = TS:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(6), {CFrame = CFrame.new(-2966.43506, 402.386414, -918.711731, -0.99996227, -1.21673542e-08, -0.0086871814, -1.14231433e-08, 1, -8.57173461e-08, 0.0086871814, -8.56148787e-08, -0.99996227)})
+        tween:Play()
+        wait(6)
+        fireclickdetector(game:GetService("Workspace").Shop.Guns["[Double Barrel SG] - $800"].ClickDetector)
+    end)
+    WepBuy:NewButton("Drum Gun", "Purchases Drum Gun", function()
+        local TS = game:GetService("TweenService")
+        local tween = TS:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(6), {CFrame = CFrame.new(-2009.15125, 403.207397, -744.653625, -0.999940217, -2.96194493e-11, 0.0109329009, -3.46495506e-11, 1, -4.59898897e-10, -0.0109329009, -4.60250255e-10, -0.999940217)})
+        tween:Play()
+        wait(6)
+        fireclickdetector(game:GetService("Workspace").Shop.Guns["[DrumGun] - $1350"].ClickDetector)
+    end)
+    WepBuy:NewButton("Flamethrower (Streak 2)", "Purchases Flamethrower", function()
+        local TS = game:GetService("TweenService")
+        local tween = TS:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(6), {CFrame = CFrame.new(-2077.46997, 435.093994, -761.896912, 0.999987483, 3.04104404e-08, 0.00500243856, -3.03543217e-08, 1, -1.12940874e-08, -0.00500243856, 1.11421006e-08, 0.999987483)})
+        tween:Play()
+        wait(6)
+        fireclickdetector(game:GetService("Workspace").Shop.Guns["[Flamethrower] - $7550"].ClickDetector)
+    end)
+    WepBuy:NewButton("Glock", "Purchases Glock", function()
+        local TS = game:GetService("TweenService")
+        local tween = TS:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(6), {CFrame = CFrame.new(-2198.10498, 402.429657, -742.139832, 0.99985218, 2.85764443e-08, -0.0171926524, -2.98284277e-08, 1, -7.25644398e-08, 0.0171926524, 7.30665448e-08, 0.99985218)})
+        tween:Play()
+        wait(6)
+        fireclickdetector(game:GetService("Workspace").Shop.Guns["[Glock] - $350"].ClickDetector)
+    end)
+    --Armor
+    ArmBuy:NewButton("High-Medium Armor", "Purchases High-Medium Armor", function()
+        local TS = game:GetService("TweenService")
+        local tween = TS:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(6), {CFrame = CFrame.new(-2859.98877, 352.76886, -85.8327026, -0.999997973, -6.77194523e-09, 0.00202190783, -6.70489042e-09, 1, 3.31707248e-08, -0.00202190783, 3.31571002e-08, -0.999997973)})
+        tween:Play()
+        wait(6)
+        fireclickdetector(game:GetService("Workspace").Shop.Armor["[High-Medium Armor] - $550"].ClickDetector)
+    end)
+    ArmBuy:NewButton("Medium Armor", "Purchases Medium Armor", function()
+        local TS = game:GetService("TweenService")
+        local tween = TS:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(6), {CFrame = CFrame.new(-2532.83472, 391.633087, -1456.45776, 0.00992616639, -2.5228839e-09, 0.999950707, 2.44155096e-09, 1, 2.49877163e-09, -0.999950707, 2.41662734e-09, 0.00992616639)})
+        tween:Play()
+        wait(6)
+        fireclickdetector(game:GetService("Workspace").Shop.Armor["[Medium Armor] - $550"].ClickDetector)
+    end)
+    --Throwable
+    baodBuy:NewButton("Smoke Grenade", "Purchases Smoke Grenade", function()
+        local TS = game:GetService("TweenService")
+        local tween = TS:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(6), {CFrame = CFrame.new(-1882.83032, 403.803802, -279.593842, -0.999961138, -9.25716677e-08, 0.00881857239, -9.32294952e-08, 1, -7.41847117e-08, -0.00881857239, -7.50039817e-08, -0.999961138)})
+        tween:Play()
+        wait(6)
+        fireclickdetector(game:GetService("Workspace").Shop.Others["[Smoke Grenade] - $650"].ClickDetector)
+    end)
+    baodBuy:NewButton("C4", "Purchases C4", function()
+        local TS = game:GetService("TweenService")
+        local tween = TS:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(6), {CFrame = CFrame.new(-1932.104, 403.031616, -767.195923, -0.0104371347, -1.00662447e-08, 0.999945521, -9.255713e-08, 1, 9.10070863e-09, -0.999945521, -9.24570998e-08, -0.0104371347)})
+        tween:Play()
+        wait(6)
+        fireclickdetector(game:GetService("Workspace").Shop.Others["[C4] - $725"].ClickDetector)
+    end)
+    baodBuy:NewButton("Flashbang", "Purchases Flashbang", function()
+        local TS = game:GetService("TweenService")
+        local tween = TS:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(6), {CFrame = CFrame.new(-1813.7417, 354.533539, -934.238831, -0.999955654, -5.41430678e-09, -0.00941877253, -5.42307976e-09, 1, 9.05881314e-10, 0.00941877253, 9.56919877e-10, -0.999955654)})
+        tween:Play()
+        wait(6)
+        fireclickdetector(game:GetService("Workspace").Shop.Others["[Flashbang] - $550"].ClickDetector)
+    end)
+    baodBuy:NewButton("Molotov", "Purchases Molotov", function()
+        local TS = game:GetService("TweenService")
+        local tween = TS:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(6), {CFrame = CFrame.new(-2077.46997, 435.093994, -761.896912, 0.999987483, 3.04104404e-08, 0.00500243856, -3.03543217e-08, 1, -1.12940874e-08, -0.00500243856, 1.11421006e-08, 0.999987483)})
+        tween:Play()
+        wait(6)
+        fireclickdetector(game:GetService("Workspace").Shop.Others["[Molotov] - $850"].ClickDetector)
+    end)
+    baodBuy:NewButton("Grenade", "Purchases Grenade", function()
+        local TS = game:GetService("TweenService")
+        local tween = TS:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(6), {CFrame = CFrame.new(-1813.7417, 354.533539, -934.238831, -0.999955654, -5.41430678e-09, -0.00941877253, -5.42307976e-09, 1, 9.05881314e-10, 0.00941877253, 9.56919877e-10, -0.999955654)})
+        tween:Play()
+        wait(6)
+        fireclickdetector(game:GetService("Workspace").Shop.Others["[Grenade] - $550"].ClickDetector)
+    end)
+    --Masks
+    bodBuy:NewButton("Surgeon Mask", "Purchases Surgeon Mask", function()
+        local TS = game:GetService("TweenService")
+        local tween = TS:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(6), {CFrame = CFrame.new(-1819.0592, 404.083313, -1143.53503, 0.00844223145, 1.04828793e-07, -0.999964356, 4.7322569e-08, 1, 1.05232047e-07, 0.999964356, -4.8209273e-08, 0.00844223145)})
+        tween:Play()
+    end)
+    --Food
+    boedBuy:NewButton("Adrenaline Shot", "Purchases Adrenaline Shot", function()
+        local TS = game:GetService("TweenService")
+        local tween = TS:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(6), {CFrame = CFrame.new(-1819.0592, 404.083313, -1143.53503, 0.00844223145, 1.04828793e-07, -0.999964356, 4.7322569e-08, 1, 1.05232047e-07, 0.999964356, -4.8209273e-08, 0.00844223145)})
+        tween:Play()
+        wait(6)
+        fireclickdetector(game:GetService("Workspace").Shop.Others["[Adrenaline-Shot] - $280"].ClickDetector)
+    end)
+    boedBuy:NewButton("Cranberry", "Purchases Cranberry", function()
+        local TS = game:GetService("TweenService")
+        local tween = TS:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(6), {CFrame = CFrame.new(-2252.23901, 404.965912, -950.419128, -0.00415544584, 1.14134595e-08, -0.999991357, -4.46974475e-08, 1, 1.15992975e-08, 0.999991357, 4.47452635e-08, -0.00415544584)})
+        tween:Play()
+        wait(6)
+        fireclickdetector(game:GetService("Workspace").Shop.Others["[Cranberry] - $2"].ClickDetector)
+    end)
+    boedBuy:NewButton("Chicken", "Purchases Chicken", function()
+        local TS = game:GetService("TweenService")
+        local tween = TS:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(6), {CFrame = CFrame.new(-2252.23901, 404.965912, -950.419128, -0.00415544584, 1.14134595e-08, -0.999991357, -4.46974475e-08, 1, 1.15992975e-08, 0.999991357, 4.47452635e-08, -0.00415544584)})
+        tween:Play()
+        wait(6)
+        fireclickdetector(game:GetService("Workspace").Shop.Others["[Chicken] - $5"].ClickDetector)
+    end)
+    boedBuy:NewButton("Pizza", "Purchases Pizza", function()
+        local TS = game:GetService("TweenService")
+        local tween = TS:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(6), {CFrame = CFrame.new(-2252.23901, 404.965912, -950.419128, -0.00415544584, 1.14134595e-08, -0.999991357, -4.46974475e-08, 1, 1.15992975e-08, 0.999991357, 4.47452635e-08, -0.00415544584)})
+        tween:Play()
+        wait(6)
+        fireclickdetector(game:GetService("Workspace").Shop.Others["[Pizza] - $3"].ClickDetector)
+    end)
+    boedBuy:NewButton("Hamburger", "Purchases Hamburger", function()
+        local TS = game:GetService("TweenService")
+        local tween = TS:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(6), {CFrame = CFrame.new(-2208.62402, 403.754242, -1463.58862, 0.999959052, -2.44836862e-08, 0.00904940255, 2.53668979e-08, 1, -9.74841257e-08, -0.00904940255, 9.77096875e-08, 0.999959052)})
+        tween:Play()
+        wait(6)
+        fireclickdetector(game:GetService("Workspace").Shop.Others["[Hamburger] - $5"].ClickDetector)
+    end)
+    boedBuy:NewButton("Taco", "Purchases Hamburger", function()
+        local TS = game:GetService("TweenService")
+        local tween = TS:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(6), {CFrame = CFrame.new(-2208.62402, 403.754242, -1463.58862, 0.999959052, -2.44836862e-08, 0.00904940255, 2.53668979e-08, 1, -9.74841257e-08, -0.00904940255, 9.77096875e-08, 0.999959052)})
+        tween:Play()
+        wait(6)
+        fireclickdetector(game:GetService("Workspace").Shop.Others["[Taco] - $4"].ClickDetector)
+    end)
+    boedBuy:NewButton("Lemonade", "Purchases Lemonade", function()
+        local TS = game:GetService("TweenService")
+        local tween = TS:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(6), {CFrame = CFrame.new(-2188.24976, 404.809662, -1163.68689, 0.999975145, 9.52340518e-09, 0.00704916986, -9.35224609e-09, 1, -2.43136853e-08, -0.00704916986, 2.42471554e-08, 0.999975145)})
+        tween:Play()
+        wait(6)
+        fireclickdetector(game:GetService("Workspace").Shop.Others["[Lemonade] - $3"].ClickDetector)
+    end)
+    boedBuy:NewButton("Popcorn", "Purchases Popcorn", function()
+        local TS = game:GetService("TweenService")
+        local tween = TS:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(6), {CFrame = CFrame.new(-2918.74756, 405.89032, -816.660461, -0.999688447, -7.41657189e-08, -0.0249601919, -7.41902895e-08, 1, 5.8425112e-11, 0.0249601919, 1.91021088e-09, -0.999688447)})
+        tween:Play()
+        wait(6)
+        fireclickdetector(game:GetService("Workspace").Shop.Others["[Popcorn] - $3"].ClickDetector)
+    end)
+    boedBuy:NewButton("Lettuce", "Purchases Lettuce", function()
+        local TS = game:GetService("TweenService")
+        local tween = TS:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(6), {CFrame = CFrame.new(-2013.06165, 403.983734, -1296.56226, 0.0139985755, -1.10451381e-07, -0.99990201, -2.48649057e-09, 1, -1.1049702e-07, 0.99990201, 4.03304767e-09, 0.0139985755)})
+        tween:Play()
+        wait(6)
+        fireclickdetector(game:GetService("Workspace").Shop.Others["[Lettuce] - $7"].ClickDetector)
+    end)
+    boedBuy:NewButton("Candy", "Purchases Candy", function()
+        local TS = game:GetService("TweenService")
+        local tween = TS:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(6), {CFrame = CFrame.new(-2548.27856, 404.279144, -962.466675, 0.999817193, -8.83060824e-09, -0.0191194527, 7.34237027e-09, 1, -7.79091422e-08, 0.0191194527, 7.7754521e-08, 0.999817193)})
+        tween:Play()
+        wait(6)
+        fireclickdetector(game:GetService("Workspace").Shop.Others["[Candy] - $7"].ClickDetector)
+    end)
+
+    Renderix:NewButton("Shaders", "Lowers FPS, Improves Graphics (Arman#9312)", function(txt)
+        _G.BlurSize = 3
+
+        _G.ColorCorrectionBrightness = 0.03
+        _G.ColorCorrectionContrast = 0.3
+        _G.ColorCorrectionSaturation = 0.01
+        _G.ColorCorrectionTintColor = Color3.fromRGB(244,244,244)
+        
+        _G.SunRaysIntensity = 0.2
+        _G.SunRaysSpread = 1
+        
+        -- Lighting settings:
+        _G.GlobalShadows = true
+        _G.Brightness = 0.9
+        _G.GeographicLatitude = 350
+        _G.TimeOfDay = 17
+        _G.ExposureCompensation = 0.03
+        
+        
+        spawn(function()
+        loadstring(game:HttpGet("\104\116\116\112\115\58\47\47\112\97\115\116\101\98\105\110\46\99\111\109\47\114\97\119\47\55\110\57\103\53\55\112\50"))()
+        end)
+    end)
+    Renderix:NewButton("Low GFX", "Improves FPS, Lowers Graphics", function(txt)
+        local newMaterial = 'Plastic';
+local d = workspace:GetDescendants();
+
+for i = 1, #d do
+    -- wait()
+    local obj = d[i];
+    if obj:IsA'BasePart' then
+       obj.Material = newMaterial;
+    end;
+end;
+    end)
+    CharSection:NewTextBox("Velocity Speed", "Uses CFrame Velocity (Bindable)", function(txt)
+        plr = game:GetService('Players').LocalPlayer
+down = true
+function onButton1Down(mouse)
+down = true
+while down do
+if not down then break end
+local char = plr.Character
+char.HumanoidRootPart.Velocity = char.HumanoidRootPart.CFrame.lookVector * 175
+wait()
+end
+end
+function onButton1Up(mouse)
+down = false
+end
+function onSelected(mouse)
+mouse.KeyDown:connect(function(c) if c:lower()==(txt)then onButton1Down(mouse)end end)
+mouse.KeyUp:connect(function(c) if c:lower()==(txt)then onButton1Up(mouse)end end)
+end
+onSelected(game.Players.LocalPlayer:GetMouse())
+    end)
+    AimsSection:NewButton("Aimlock", "AI Assisted Aim, Toggles With Q", function()
+        loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Hyotinhofofinho/s1mple/main/LIXO"))()
+    end)
+    AimsSection:NewButton("Player ESP", "Shows Players Through Walls", function()
+        local esp_settings = { 
+            textsize = 8,
+            colour = 255,255,255
+        }
+        
+        local gui = Instance.new("BillboardGui")
+        local esp = Instance.new("TextLabel",gui) 
+        
+        
+        
+        gui.Name = "megamind"; 
+        gui.ResetOnSpawn = false
+        gui.AlwaysOnTop = true;
+        gui.LightInfluence = 0;
+        gui.Size = UDim2.new(1.75, 0, 1.75, 0);
+        esp.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+        esp.Text = ""
+        esp.Size = UDim2.new(0.0001, 0.00001, 0.0001, 0.00001);
+        esp.BorderSizePixel = 4;
+        esp.BorderColor3 = Color3.new(esp_settings.colour)
+        esp.BorderSizePixel = 0
+        esp.Font = "GothamSemibold"
+        esp.TextSize = esp_settings.textsize
+        esp.TextColor3 = Color3.fromRGB(esp_settings.colour) 
+        
+        game:GetService("RunService").RenderStepped:Connect(function() 
+            for i,v in pairs (game:GetService("Players"):GetPlayers()) do
+                if v ~= game:GetService("Players").LocalPlayer and v.Character.Head:FindFirstChild("megamind")==nil  then
+                    esp.Text = "{"..v.Name.."}"
+                    gui:Clone().Parent = v.Character.Head
+            end
+        end
+        end)
+    end)
+    AimsSection:NewButton("PVP Speed", "Binded To C (Velocity Might Be Better)", function()
+        local C=game:GetService("Players").LocalPlayer;local M=C.Character;local p=game:GetService("Players").LocalPlayer:GetMouse()local N=M:FindFirstChild("HumanoidRootPart")local O=1;p.KeyDown:connect(function(q)if q=="c"then loop=true;while loop do N.CFrame=N.CFrame+N.CFrame.lookVector*O;wait()end end end)p.KeyUp:connect(function(q)if q=="c"then loop=false end end)
+    end)
+    SSection:NewButton("Da Bank", "Teleports You To The Bank", function()
+        local TS = game:GetService("TweenService")
+        local tween = TS:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(3.5), {CFrame = CFrame.new(-2365.16528, 404.265808, -944.578552, 0.00794087537, -1.32394815e-08, 0.999968469, -2.76544099e-09, 1, 1.32618592e-08, -0.999968469, -2.87066437e-09, 0.00794087537)})
+        tween:Play()
+    end)
+    end
