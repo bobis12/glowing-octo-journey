@@ -27,6 +27,7 @@ local TextLabel_5 = Instance.new("TextLabel")
 --Properties:
 
 ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ResetOnSpawn = false
 
 cmdbar.Name = "cmdbar"
 cmdbar.Parent = ScreenGui
@@ -260,7 +261,7 @@ TextLabel_5.TextSize = 14.000
 
 -- Scripts:
 
-local function EFEFWXY_fake_script() -- TextBox.LocalScript 
+local function RCBVT_fake_script() -- TextBox.LocalScript 
 	local script = Instance.new('LocalScript', TextBox)
 
 	script.Parent.FocusLost:Connect(function()
@@ -290,8 +291,8 @@ local function EFEFWXY_fake_script() -- TextBox.LocalScript
 		end
 	end)
 end
-coroutine.wrap(EFEFWXY_fake_script)()
-local function VBOP_fake_script() -- cmdbar.LocalScript 
+coroutine.wrap(RCBVT_fake_script)()
+local function KRNKTR_fake_script() -- cmdbar.LocalScript 
 	local script = Instance.new('LocalScript', cmdbar)
 
 	local Main = script.Parent
@@ -315,8 +316,8 @@ local function VBOP_fake_script() -- cmdbar.LocalScript
 		end
 	end)
 end
-coroutine.wrap(VBOP_fake_script)()
-local function IEFMOJ_fake_script() -- TextButton.LocalScript 
+coroutine.wrap(KRNKTR_fake_script)()
+local function ZEQHTZ_fake_script() -- TextButton.LocalScript 
 	local script = Instance.new('LocalScript', TextButton)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -329,8 +330,8 @@ local function IEFMOJ_fake_script() -- TextButton.LocalScript
 		script.Parent.Parent.Frame.Visible=false
 	end)
 end
-coroutine.wrap(IEFMOJ_fake_script)()
-local function SLMSPK_fake_script() -- Frame.LocalScript 
+coroutine.wrap(ZEQHTZ_fake_script)()
+local function KVAWBGJ_fake_script() -- Frame.LocalScript 
 	local script = Instance.new('LocalScript', Frame)
 
 	frame = script.Parent
@@ -338,8 +339,8 @@ local function SLMSPK_fake_script() -- Frame.LocalScript
 	frame.Active = true
 	frame.Selectable = true
 end
-coroutine.wrap(SLMSPK_fake_script)()
-local function PXOMV_fake_script() -- cmds.LocalScript 
+coroutine.wrap(KVAWBGJ_fake_script)()
+local function WWFQNZ_fake_script() -- cmds.LocalScript 
 	local script = Instance.new('LocalScript', cmds)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -362,8 +363,8 @@ local function PXOMV_fake_script() -- cmds.LocalScript
 		end)
 	end)
 end
-coroutine.wrap(PXOMV_fake_script)()
-local function NIPWPO_fake_script() -- loadgui.LocalScript 
+coroutine.wrap(WWFQNZ_fake_script)()
+local function HIOL_fake_script() -- loadgui.LocalScript 
 	local script = Instance.new('LocalScript', loadgui)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -386,8 +387,8 @@ local function NIPWPO_fake_script() -- loadgui.LocalScript
 		end)
 	end)
 end
-coroutine.wrap(NIPWPO_fake_script)()
-local function VXWNIQ_fake_script() -- skydive.LocalScript 
+coroutine.wrap(HIOL_fake_script)()
+local function NXEFGZ_fake_script() -- skydive.LocalScript 
 	local script = Instance.new('LocalScript', skydive)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -410,8 +411,8 @@ local function VXWNIQ_fake_script() -- skydive.LocalScript
 		end)
 	end)
 end
-coroutine.wrap(VXWNIQ_fake_script)()
-local function SNNKAQ_fake_script() -- reset.LocalScript 
+coroutine.wrap(NXEFGZ_fake_script)()
+local function YIXI_fake_script() -- reset.LocalScript 
 	local script = Instance.new('LocalScript', reset)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -434,8 +435,8 @@ local function SNNKAQ_fake_script() -- reset.LocalScript
 		end)
 	end)
 end
-coroutine.wrap(SNNKAQ_fake_script)()
-local function GBLGV_fake_script() -- ScreenGui.LocalScript 
+coroutine.wrap(YIXI_fake_script)()
+local function OCEE_fake_script() -- ScreenGui.LocalScript 
 	local script = Instance.new('LocalScript', ScreenGui)
 
 	local Players = game:GetService("Players")
@@ -461,8 +462,8 @@ local function GBLGV_fake_script() -- ScreenGui.LocalScript
 		end
 	end
 end
-coroutine.wrap(GBLGV_fake_script)()
-local function SDDWA_fake_script() -- ScreenGui.LocalScript 
+coroutine.wrap(OCEE_fake_script)()
+local function PXTN_fake_script() -- ScreenGui.LocalScript 
 	local script = Instance.new('LocalScript', ScreenGui)
 
 	Players = game:GetService("Players")
@@ -477,4 +478,4 @@ local function SDDWA_fake_script() -- ScreenGui.LocalScript
 		end
 	end
 end
-coroutine.wrap(SDDWA_fake_script)()
+coroutine.wrap(PXTN_fake_script)()
